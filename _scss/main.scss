@@ -1,7 +1,46 @@
-@import "reset";
-@import "syntax";
+@charset "utf-8";
 
-body {
-    background: white;
-    transition: .3s ease all;
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Lato|Merriweather:700);
+
+// Variables
+$base-font-family: Merriweather;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #fff;
+$background-color: #06526b;
+$header-color:     #033849;
+$brand-color:      #2a7ae2;
+$icon-color:       #02232e;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+// Using media queries with like this:
+// @include media-query($palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
 }
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "reset",
+        "syntax",
+        "base",
+        "layout"
+;
