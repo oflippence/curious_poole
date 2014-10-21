@@ -98,7 +98,6 @@ a {
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
     }
 }
 
@@ -199,17 +198,25 @@ pre {
 
         &:hover {
             color: #168b9c;
+            text-decoration: none;
         }
     }
 
-    > svg {
+    svg {
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
+        height: 29px;
+        text-decoration: none;
 
         path {
-            fill: $grey-color;
+            fill: $icon-color;
+            transition: .3s ease all;
         }
+        &:hover {
+            path {
+                fill: #168b9c;
+            }
+
+        }
+
     }
 }
