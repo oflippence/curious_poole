@@ -1,8 +1,5 @@
-.section-buttons {
-    position: relative;
-    height: 100%;
-
 // Universal styling ----------------------------------
+.button {
 
   .button-bg {
     position: relative;
@@ -21,8 +18,16 @@
     color: white;
     transition: .3s ease all;
   }
+}
 
-// Info button ----------------------------------
+// Off Canvas Buttons Buttons -------------------
+
+.off-canvas-buttons {
+    position: absolute;
+    height: 100%;
+    z-index: 1000;
+
+  // Info button ----------------------------------
 
   .info-button {
     position: fixed;
@@ -43,7 +48,7 @@
     } // &:hover
   } // .info-button
 
-// Map button ----------------------------------
+  // Map button ----------------------------------
 
   .map-button  {
     position: fixed;
@@ -63,28 +68,41 @@
       } // i
     } // &:hover
   } // .info-button
+} // .off-canvas-buttons
+
+// Sections up button ----------------------------------
+
+.up-button {
+  position: absolute;
+  top: 30px; left: 30px;
+
+  &:hover {
+    i {
+      opacity: 0.5;
+    } // i
+  } // &:hover
+}// .up-button
 
 // Home down button ----------------------------------
 
-  .down-button  {
-    position: absolute;
-    bottom: 30px; left: 50%;
-    margin-left: -25px;
+.down-button  {
+  position: absolute;
+  bottom: 30px; left: 50%;
+  margin-left: -25px;
 
+  i {
+    font-size: 13px;
+    left: 13px; top: 21px;
+  } // i
+
+  &:hover {
+    .button-bg {
+      opacity: 1;
+    }
+    
     i {
-      font-size: 13px;
-      left: 13px; top: 21px;
+      color: $icon-color;
     } // i
-
-    &:hover {
-      .button-bg {
-        opacity: 1;
-      }
-      
-      i {
-        color: $icon-color;
-      } // i
-    } // &:hover
-  } // .down-button
-} // .section-buttons
+  } // &:hover
+} // .down-button
 

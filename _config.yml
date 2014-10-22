@@ -1,5 +1,5 @@
-name: Curious Poole
-email: oflippence@gmail.com
+title: Curious Poole
+
 description: > # this means to ignore newlines until "baseurl:"
   An illustration project by James Addison about the unseen curiosities of Poole
 baseurl: "" # the subpath of your site, e.g. /blog/
@@ -10,3 +10,9 @@ github_username:  oflippence
 markdown: redcarpet
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
+
+designer: James Addison
+designer_email: itsjamesaddison@gmail.com
+
+developer: Oliver Flippence
+developer_email: oflippence@gmail.com

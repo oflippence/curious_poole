@@ -1,34 +1,32 @@
 // Variables
 $base-font-family: Merriweather;
+$secondary-font-family: Lato;
+
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
+$letter-spaceing:  0.5px;
 
-$text-color:       #fff;
+$text-color:       #ebf3ed;
 $background-color: #06526b;
 $header-color:     #033849;
+$footer-color:     #282b2c;
 $brand-color:      #2a7ae2;
 $icon-color:       #02232e;
+
+// Section BG Colours
+
+$section-1-bg:      #11998c;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$on-palm:          600px;
-$on-laptop:        800px;
-$on-desktop:       1200px;
+// Breakpoints
 
-// Using media queries with like this:
-// @include media-query($palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
+$breakpoint-mobile:     320px;
+$breakpoint-tablet:     730px;
+$breakpoint-desktop:    1000px;
+$breakpoint-wide:       1300px;

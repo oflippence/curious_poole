@@ -16,13 +16,17 @@ dl, dd, ol, ul, figure {
 body {
     font-family: $base-font-family;
     font-size: $base-font-size;
-    // line-height: $base-line-height;
-    font-weight: 700;
+    letter-spacing: $letter-spaceing;
+    line-height: $base-line-height;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
 }
 
+p {
+    font-family: $secondary-font-family;
+    font-weight: 300;
+}
 
 
 /**
@@ -80,24 +84,28 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-family: $base-font-family;
+    font-weight: 400;
 }
 
+h2 {
+    font-size: 20px;
+
+}
 
 
 /**
  * Links
  */
 a {
-    color: $brand-color;
+    color: $text-color;
     text-decoration: none;
+    transition: 0.3s ease all;
 
     &:visited {
-        color: darken($brand-color, 15%);
     }
 
     &:hover {
-        color: $text-color;
     }
 }
 
@@ -161,7 +169,7 @@ pre {
     padding-left: $spacing-unit;
     @extend %clearfix;
 
-    @include media-query($on-laptop) {
+    @include mq(tablet) {
         max-width: -webkit-calc(900px - (#{$spacing-unit}));
         max-width:         calc(900px - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
@@ -189,34 +197,31 @@ pre {
  * Icons
  */
 .icon {
+  i {
+    color: $icon-color;
+    font-size: 28px;
+    line-height: initial;
+    transition: .3s ease all;
 
-    i {
-        color: $icon-color;
-        font-size: 28px;
-        line-height: initial;
+    &:hover {
+      color: #168b9c;
+      text-decoration: none;
+    }
+  }
+
+  svg {
+    display: inline-block;
+    height: 29px;
+    text-decoration: none;
+
+    path {
+        fill: $icon-color;
         transition: .3s ease all;
-
-        &:hover {
-            color: #168b9c;
-            text-decoration: none;
-        }
     }
-
-    svg {
-        display: inline-block;
-        height: 29px;
-        text-decoration: none;
-
-        path {
-            fill: $icon-color;
-            transition: .3s ease all;
-        }
-        &:hover {
-            path {
-                fill: #168b9c;
-            }
-
-        }
-
+    &:hover {
+      path {
+          fill: #168b9c;
+      }
     }
+  }
 }
