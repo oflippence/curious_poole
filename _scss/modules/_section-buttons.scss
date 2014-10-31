@@ -13,7 +13,7 @@
 
   i {
     position: absolute;
-    z-index: 500;
+    z-index: 250;
     font-size: 28px;
     color: white;
     transition: .3s ease all;
@@ -26,6 +26,15 @@
     position: absolute;
     height: 100%;
     z-index: 1000;
+
+    button {
+      background: none;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
 
   // Info button ----------------------------------
 

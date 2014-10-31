@@ -4,6 +4,8 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var sourcemaps  = require('gulp-sourcemaps');
+var uglify      = require('gulp-uglify');
+var concat      = require('gulp-concat');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -54,11 +56,24 @@ gulp.task('sass', function () {
 });
 
 /**
+ * Compile files from _js into both _site/js (for live injecting) and site (for future jekyll builds)
+ */
+gulp.task('js', function () {
+    return gulp.src('_js/*.js')
+        .pipe(concat('script.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('_site/js'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('js'));
+});
+
+/**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
     gulp.watch(['_scss/*.scss', '_scss/modules/*.scss' ], ['sass']);
+    gulp.watch(['_js/*js',], ['js']);  
     gulp.watch(['index.html', '_layouts/*.html', '_posts/*', '_includes/*.html'], ['jekyll-rebuild']);
 });
 
