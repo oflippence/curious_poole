@@ -27,19 +27,21 @@
 
 	function init() {
 
-
-		var button = $("#st-trigger-effects > button"),
+		var button1 = $("#st-trigger-effects-1 > button"),
+		button2 = $("#st-trigger-effects-2 > button"),
 		container = $("#st-container");
 
-		$(button).on( "click", function() {
+		$(button1).on( "click", function() {
 			var effect = this.getAttribute( 'data-effect' );
 			container.toggleClass(effect);
 			container.toggleClass("st-menu-open");
 		});
 
-		
-
-
+		$(button2).on( "click", function() {
+			var effect = this.getAttribute( 'data-effect' );
+			container.toggleClass(effect);
+			container.toggleClass("st-menu-open");
+		});
 
 		// var container = document.getElementById( 'st-container' ),
 		// 	buttons = Array.prototype.slice.call( document.querySelectorAll( '#st-trigger-effects > button' ) ),
