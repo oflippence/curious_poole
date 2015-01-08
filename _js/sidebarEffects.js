@@ -34,14 +34,15 @@
 		$(button1).on( "click", function() {
 			var effect = this.getAttribute( 'data-effect' );
 			container.toggleClass(effect);
-			container.toggleClass("st-menu-open");
+			container.toggleClass("st-menu-open--left");
 		});
 
 		$(button2).on( "click", function() {
 			var effect = this.getAttribute( 'data-effect' );
 			container.toggleClass(effect);
-			container.toggleClass("st-menu-open");
+			container.toggleClass("st-menu-open--right");
 		});
+
 
 		// var container = document.getElementById( 'st-container' ),
 		// 	buttons = Array.prototype.slice.call( document.querySelectorAll( '#st-trigger-effects > button' ) ),
@@ -72,9 +73,17 @@
 		// 	});
 		// } );
 
-
 	}
 
 	init();
 
 })();
+
+(function($){
+
+$('#section-1').waypoint(function(direction) {
+			alert('test');
+		});
+})(jQuery);
+
+
