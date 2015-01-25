@@ -15,7 +15,7 @@ body,
 }
 
 .st-content {
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 
 .st-content,
@@ -148,6 +148,7 @@ body,
 
 #map-canvas {
   height: 100%;
+  width: 100%;
 }
 
 /* Individual effects */

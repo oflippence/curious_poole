@@ -1,0 +1,76 @@
+#projects {
+  height:100%;
+}
+
+.slide {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 0;
+  width: 100%;
+
+  background: pink;
+  overflow: hidden;
+  // this would be vendor prefixed:
+  transition: height 0.9s ease-in-out;
+
+  .button {
+    display: none;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: display 0.9s ease-in-out;
+  }
+
+  .button--left {
+    left: 0;
+  }
+
+  .button--right {
+    right: 0;
+  }
+
+  &.active {
+    .button { display: block; }
+  }
+
+}
+
+.slide__panel {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease;
+  z-index: 5;
+}
+
+.slide__panel--left {
+  transform: translateX(-100%);
+  background: green;
+}
+
+.slide__panel--right {
+  transform: translateX(100%);
+  background: blue;
+}
+
+.left--active {
+  .slide__panel--left { transform: translate(0) ; }
+}
+
+.right--active {
+  .slide__panel--right { transform: translate(0) ; }
+}
+
+
+// so that slides can transition from bottom-up
+.slide:nth-child(1) { z-index:10; background: red; }
+.slide:nth-child(2) { z-index:9; background: #bcdfe6; }
+.slide:nth-child(3) { z-index:8; background: #5eb0c1 ; }
+
+.active.slide {
+  height: 100%;
+}
